@@ -1,0 +1,35 @@
+{
+  "bucketName": "fallcartonfilesbucket",
+  "authPolicyName": "s3_amplify_97fc7072",
+  "unauthPolicyName": "s3_amplify_97fc7072",
+  "authRoleName": {
+    "Ref": "AuthRoleName"
+  },
+  "unauthRoleName": {
+    "Ref": "UnauthRoleName"
+  },
+  "selectedGuestPermissions": [
+    "s3:GetObject",
+    "s3:ListBucket"
+  ],
+  "selectedAuthenticatedPermissions": [
+    "s3:PutObject",
+    "s3:GetObject",
+    "s3:ListBucket",
+    "s3:DeleteObject"
+  ],
+  "s3PermissionsAuthenticatedPublic": "s3:PutObject,s3:GetObject,s3:DeleteObject",
+  "s3PublicPolicy": "Public_policy_934574ed",
+  "s3PermissionsAuthenticatedUploads": "s3:PutObject",
+  "s3UploadsPolicy": "Uploads_policy_934574ed",
+  "s3PermissionsAuthenticatedProtected": "s3:PutObject,s3:GetObject,s3:DeleteObject",
+  "s3ProtectedPolicy": "Protected_policy_934574ed",
+  "s3PermissionsAuthenticatedPrivate": "s3:PutObject,s3:GetObject,s3:DeleteObject",
+  "s3PrivatePolicy": "Private_policy_934574ed",
+  "AuthenticatedAllowList": "ALLOW",
+  "s3ReadPolicy": "read_policy_934574ed",
+  "s3PermissionsGuestPublic": "DISALLOW",
+  "s3PermissionsGuestUploads": "DISALLOW",
+  "GuestAllowList": "DISALLOW",
+  "triggerFunction": "NONE"
+}

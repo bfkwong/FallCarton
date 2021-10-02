@@ -2,16 +2,15 @@ import { Typography, Grid } from "@material-ui/core";
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { FileUploader } from "../Utility/FileUploader/FileUploader";
-import dummyFiles from "../../mock/mockFiles.json";
 
 import "./FilesList.css";
 
 export default function FilesList(props) {
-  const [files, setFiles] = React.useState();
+  const [files, setFiles] = React.useState([]);
   const history = useHistory();
 
   React.useEffect(() => {
-    setFiles(Object.values(dummyFiles));
+    setFiles([]);
   }, []);
 
   if (files?.length === 0) {
