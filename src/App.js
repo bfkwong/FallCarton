@@ -6,7 +6,7 @@ import "./App.css";
 import FilesList from "./components/FilesList/FilesList";
 import FileView from "./components/FileView/FileView";
 
-function App() {
+function MainApp() {
   return (
     <Container>
       <Navbar />
@@ -39,6 +39,10 @@ function App() {
       </Grid>
     </Container>
   );
+}
+
+function App() {
+  return <MainApp />;
 }
 
 export default App;
