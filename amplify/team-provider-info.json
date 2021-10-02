@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-fallcarton-dev-151243-authRole",
+      "UnauthRoleArn": "arn:aws:iam::203543018136:role/amplify-fallcarton-dev-151243-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::203543018136:role/amplify-fallcarton-dev-151243-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-fallcarton-dev-151243-deployment",
+      "UnauthRoleName": "amplify-fallcarton-dev-151243-unauthRole",
+      "StackName": "amplify-fallcarton-dev-151243",
+      "StackId": "arn:aws:cloudformation:us-west-2:203543018136:stack/amplify-fallcarton-dev-151243/df9dc790-23cd-11ec-b1e2-02afe776b4ef",
+      "AmplifyAppId": "d3rluw3tfpm5ve"
+    },
+    "categories": {
+      "auth": {
+        "fallcartonb9fa1e04": {}
+      }
+    }
+  }
+}

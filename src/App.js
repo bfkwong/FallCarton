@@ -1,6 +1,7 @@
 import { Container, Grid, Typography } from "@material-ui/core";
 import { Route, Switch } from "react-router-dom";
 import Navbar from "./components/Utility/NavBar/NavBar";
+import { withAuthenticator } from "@aws-amplify/ui-react";
 
 import "./App.css";
 import FilesList from "./components/FilesList/FilesList";
@@ -45,4 +46,4 @@ function App() {
   return <MainApp />;
 }
 
-export default App;
+export default withAuthenticator(App);
