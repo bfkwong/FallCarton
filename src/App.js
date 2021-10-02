@@ -23,7 +23,7 @@ function MainApp() {
       <Grid container className="app_footer" spacing={3}>
         <Grid item>
           <Typography variant="subtitle1" color="textSecondary">
-            About
+            About us
           </Typography>
         </Grid>
         <Grid item>
