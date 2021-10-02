@@ -1,0 +1,11 @@
+.navbar_container {
+  padding: 15px 0px 0px 0px;
+}
+
+.navbar_link-btn {
+  color: #777777;
+}
+
+.navbar_link-btn:hover {
+  cursor: pointer;
+}

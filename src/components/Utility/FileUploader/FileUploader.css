@@ -1,0 +1,22 @@
+.fileuploader_container {
+  width: 100%;
+  height: 100%;
+}
+
+.fileuploader_container:hover {
+  cursor: pointer;
+}
+
+.fileuploader_inner {
+  height: 100%;
+  background-color: #edfafd;
+  text-align: center;
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #00b4d8;
+}
+
+.fileuploader_inner_dragactive {
+  background-color: #caf0f8;
+}

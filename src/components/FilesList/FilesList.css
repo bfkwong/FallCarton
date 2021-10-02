@@ -1,0 +1,11 @@
+.filelist_item {
+  border-top: solid;
+  border-width: 1px;
+  border-color: #e4e4e4;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.filelist_item:hover {
+  cursor: pointer;
+}
