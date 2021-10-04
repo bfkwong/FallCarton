@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import { Auth } from "aws-amplify";
 
+import FallCrateLogo from "../../../assets/fallcratel.png";
 import "./NavBar.css";
 
 export default function Navbar(props) {
@@ -12,11 +13,9 @@ export default function Navbar(props) {
   return (
     <Grid container className="navbar_container" alignItems="center" spacing={2}>
       <Grid item xs>
-        <Grid container alignItems="flex-end" spacing={3}>
-          <Grid item>
-            <Typography variant="h5" className="navbar_link-btn" onClick={() => history.push("/")} color="textPrimary">
-              FallCarton
-            </Typography>
+        <Grid container alignItems="center" spacing={3}>
+          <Grid item onClick={() => history.push("/files")}>
+            <img src={FallCrateLogo} alt="Fall Crates" width="225px" style={{ paddingBottom: 5 }} />
           </Grid>
           <Grid item>
             <Typography variant="subtitle1" className="navbar_link-btn" onClick={() => history.push("/files")}>

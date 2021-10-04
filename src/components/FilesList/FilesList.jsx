@@ -69,7 +69,8 @@ export default function FilesList(props) {
               </Grid>
               <Grid item xs={6} sm={3}>
                 <Typography variant="subtitle1" color="textSecondary">
-                  {file.lastModifiedTime}
+                  {new Date(file.lastModifiedTime).toLocaleDateString()}{" "}
+                  {new Date(file.lastModifiedTime).toLocaleTimeString()}
                 </Typography>
               </Grid>
               <Grid item xs={6} sm={3}>

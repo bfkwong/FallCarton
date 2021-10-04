@@ -49,13 +49,13 @@ export default function FileView(props) {
                     <b>
                       <Typography variant="subtitle1">Last modified at:</Typography>
                     </b>
-                    <Typography variant="subtitle1">{file.lastModifiedTime}</Typography>
+                    <Typography variant="subtitle1">{new Date(file.lastModifiedTime).toLocaleString()}</Typography>
                   </Grid>
                   <Grid item>
                     <b>
                       <Typography variant="subtitle1">Created at:</Typography>
                     </b>
-                    <Typography variant="subtitle1">{file.uploadTime}</Typography>
+                    <Typography variant="subtitle1">{new Date(file.uploadTime).toLocaleString()}</Typography>
                   </Grid>
                 </Grid>
               </Grid>
@@ -118,7 +118,7 @@ export default function FileView(props) {
                         body: JSON.stringify(newFileObj)
                       });
                       setFile((fle) => {
-                        return { ...fle, lastModifiedTime: JSON.stringify(new Date()) };
+                        return { ...fle, lastModifiedTime: new Date() };
                       });
                     }
                     setEditing((editing) => !editing);
