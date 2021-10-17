@@ -1,8 +1,9 @@
 import Auth from "@aws-amplify/auth";
-import { Typography, Grid } from "@material-ui/core";
+import { Typography, Grid, IconButton } from "@material-ui/core";
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { FileUploader } from "../Utility/FileUploader/FileUploader";
+import DeleteIcon from "@material-ui/icons/Delete";
 
 import "./FilesList.css";
 
@@ -14,7 +15,7 @@ export default function FilesList(props) {
   const updateFileList = async () => {
     setLoading(true);
     const cogUserId = await Auth.currentSession();
-    const resp = await fetch("https://uvn8m8dpn6.execute-api.us-west-2.amazonaws.com/prod/v1/files?", {
+    const resp = await fetch("https://uvn8m8dpn6.execute-api.us-west-2.amazonaws.com/prod/v1/files", {
       method: "GET",
       mode: "cors",
       headers: {
@@ -22,7 +23,25 @@ export default function FilesList(props) {
       }
     });
     const respData = await resp.json();
-    setFiles(respData.Items);
+
+    const newFiles = [];
+    for (const item of respData.Items) {
+      const respUserName = await fetch(
+        `https://wzwyqze9bi.execute-api.us-west-2.amazonaws.com/prod/v1/user?userId=${item.userId}`,
+        {
+          method: "GET",
+          mode: "cors",
+          headers: {
+            Authorization: cogUserId?.idToken?.jwtToken
+          }
+        }
+      );
+      const respUserNameData = await respUserName.json();
+      newFiles.push({ ...item, ...respUserNameData.Item });
+    }
+
+    console.log(newFiles);
+    setFiles(newFiles);
     setLoading(false);
   };
 
@@ -62,7 +81,12 @@ export default function FilesList(props) {
         files.map((file) => (
           <Grid item xs={12} className="filelist_item" onClick={() => history.push(`/file/${file.fileId}`)}>
             <Grid container alignItems="center">
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={1} sm={1}>
+                <IconButton>
+                  <DeleteIcon />
+                </IconButton>
+              </Grid>
+              <Grid item xs={11} sm={5}>
                 <Typography variant="subtitle1" color="textSecondary">
                   {file.name}
                 </Typography>
@@ -73,9 +97,9 @@ export default function FilesList(props) {
                   {new Date(file.lastModifiedTime).toLocaleTimeString()}
                 </Typography>
               </Grid>
-              <Grid item xs={6} sm={3}>
+              <Grid item xs={6} sm={2}>
                 <Typography variant="subtitle1" color="textSecondary">
-                  {file.ownerFirstName} {file.ownerLastName}
+                  {file.firstName} {file.lastName}
                 </Typography>
               </Grid>
             </Grid>
