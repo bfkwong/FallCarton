@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Grid, Typography, Button } from "@material-ui/core";
+import { Container, Button } from "@material-ui/core";
 import { Route, Switch } from "react-router-dom";
 import Navbar from "./components/Utility/NavBar/NavBar";
 import { withAuthenticator } from "@aws-amplify/ui-react";
@@ -59,25 +59,11 @@ function MainApp() {
           <Route path="/file/:id">
             <FileView />
           </Route>
+          <Route path="/">
+            <FilesList />
+          </Route>
         </Switch>
       </Container>
-      <Grid container className="app_footer" spacing={3}>
-        <Grid item>
-          <Typography variant="subtitle1" color="textSecondary">
-            About us
-          </Typography>
-        </Grid>
-        <Grid item>
-          <Typography variant="subtitle1" color="textSecondary">
-            Help
-          </Typography>
-        </Grid>
-        <Grid item>
-          <Typography variant="subtitle1" color="textSecondary">
-            Terms of Service
-          </Typography>
-        </Grid>
-      </Grid>
       <Dialog open={!loading && !userInfo?.Item} disableBackdropClick>
         <DialogTitle>Hello! Tell us a bit about yourself</DialogTitle>
         <DialogContent>

@@ -22,17 +22,7 @@ export default function Navbar(props) {
               Files
             </Typography>
           </Grid>
-          <Grid item>
-            <Typography variant="subtitle1" className="navbar_link-btn">
-              Recently deleted
-            </Typography>
-          </Grid>
         </Grid>
-      </Grid>
-      <Grid item>
-        <Typography variant="subtitle1" className="navbar_link-btn">
-          Profile
-        </Typography>
       </Grid>
       <Grid item>
         <IconButton
