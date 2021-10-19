@@ -1,9 +1,8 @@
 import Auth from "@aws-amplify/auth";
-import { Typography, Grid, IconButton } from "@material-ui/core";
+import { Typography, Grid } from "@material-ui/core";
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { FileUploader } from "../Utility/FileUploader/FileUploader";
-import DeleteIcon from "@material-ui/icons/Delete";
 
 import "./FilesList.css";
 
@@ -81,12 +80,7 @@ export default function FilesList(props) {
         files.map((file) => (
           <Grid item xs={12} className="filelist_item" onClick={() => history.push(`/file/${file.fileId}`)}>
             <Grid container alignItems="center">
-              <Grid item xs={1} sm={1}>
-                <IconButton>
-                  <DeleteIcon />
-                </IconButton>
-              </Grid>
-              <Grid item xs={11} sm={5}>
+              <Grid item xs={12} sm={6}>
                 <Typography variant="subtitle1" color="textSecondary">
                   {file.name}
                 </Typography>
@@ -97,7 +91,7 @@ export default function FilesList(props) {
                   {new Date(file.lastModifiedTime).toLocaleTimeString()}
                 </Typography>
               </Grid>
-              <Grid item xs={6} sm={2}>
+              <Grid item xs={6} sm={3}>
                 <Typography variant="subtitle1" color="textSecondary">
                   {file.firstName} {file.lastName}
                 </Typography>
